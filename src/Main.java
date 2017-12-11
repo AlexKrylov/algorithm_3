@@ -40,7 +40,6 @@ public class Main {
                     buff = arr[i];
                     arr[i] = arr[i + 1];
                     arr[i + 1] = buff;
-                    count++;
                 }
             }
             right--;
@@ -49,10 +48,10 @@ public class Main {
                     buff = arr[i];
                     arr[i] = arr[i - 1];
                     arr[i - 1] = buff;
-                    count++;
                 }
             }
             left++;
+            count++;
         } while (left < right);
         System.out.println(count);
         return arr;
