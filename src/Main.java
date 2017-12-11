@@ -9,6 +9,9 @@ public class Main {
         int[] arr2 = {2, 4, 9, 1, 3, 5, 7, 8, 6};
         shakerSorting(arr2);
         System.out.println(Arrays.toString(arr2));
+
+        int[] arr3 = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+        System.out.println(search(arr3, 12));
     }
 
     //сортировка пузырьком
@@ -55,5 +58,18 @@ public class Main {
         } while (left < right);
         System.out.println(count);
         return arr;
+    }
+
+    //бинарный поиск
+    public static int search(int[] arr, int element) {
+        int middle, low = 0, count = 0;
+        int high = arr.length - 1;
+        while (low <= high) {
+            middle = (low + high) / 2;
+            if (element < arr[middle]) high = middle - 1;
+            else if (element > arr[middle]) low = middle + 1;
+            else return middle;
+        }
+        return -1;
     }
 }
